@@ -35,6 +35,7 @@ const BarChartWithLegend = () => {
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: { display: false },
             tooltip: { enabled: false },
@@ -62,14 +63,19 @@ const BarChartWithLegend = () => {
     return (
         <div
             style={{
-                width: 360,
+                width: '100%',
+                maxWidth: 480,
                 background: '#fff4ee',
                 borderRadius: 12,
                 padding: 16,
                 fontFamily: 'sans-serif',
+                boxSizing: 'border-box',
+                margin: '0 auto',
             }}
         >
-            <Bar data={data} options={options} />
+            <div style={{ width: '100%', height: 220 }}>
+                <Bar data={data} options={options} />
+            </div>
             <div style={{ marginTop: 12 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#333' }}>
                     <span

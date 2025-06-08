@@ -77,7 +77,7 @@ const CourseDetail = () => {
                     {selectedVideo && (
                         <div className="w-full">
                             {/* <h3 className="text-lg font-semibold mb-2">{selectedVideo.title}</h3> */}
-                            <div className='flex items-ceter gap-3'>
+                            <div className='flex flex-wrap lg:flex-nowrap items-ceter gap-3'>
                                 <div className='max-w-[975px] w-full h-full'>
                                     <video controls className="w-full rounded-[20px]">
                                         <source src={selectedVideo.url} type="video/mp4" />

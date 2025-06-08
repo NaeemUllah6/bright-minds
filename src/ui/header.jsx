@@ -3,11 +3,14 @@ import { useAuth } from '../context/AuthContext'
 import Input from '../components/global-components/input'
 import Profile_Avatar from '../assets/images/profile-avatar.svg'
 import { HiOutlineMenu } from 'react-icons/hi'
+import { FiChevronDown } from 'react-icons/fi'
+import searchIcon from '../assets/images/searcicon.svg'
 
 function Header({ onChange, setShowSidebar }) {
   const { user } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
   const [selected, setSelected] = useState(null)
+  const [profileOpen, setProfileOpen] = useState(false)
   const dropdownRef = useRef(null)
 
   const handleSelect = (option) => {
@@ -19,6 +22,7 @@ function Header({ onChange, setShowSidebar }) {
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsOpen(false)
+      setProfileOpen(false)
     }
   }
 
@@ -35,8 +39,8 @@ function Header({ onChange, setShowSidebar }) {
   ]
 
   return (
-    <div className="bg-transparent px-4 py-3 md:px-[54px] md:py-4 shadow sticky top-0 z-[99999]">
-      <div className="flex justify-between items-center gap-4 ">
+    <div className="bg-[#E5F4F8] px-4 py-3 md:px-[54px] md:py-4 sticky top-0 z-[99999]">
+      <div className="flex justify-between items-center gap-4">
         {/* 📱 Burger Menu */}
         <div className="md:hidden">
           <button onClick={() => setShowSidebar(true)}>
@@ -44,32 +48,27 @@ function Header({ onChange, setShowSidebar }) {
           </button>
         </div>
 
-        {/* 👨‍💻 Desktop Search */}
-        <div className="hidden md:block w-full">
+
+        <div className="block w-full relative">
           <Input
             placeholder="Search your courses"
             icon=""
-            className="border !border-[#949494] ps-10 bg-white py-3 rounded-full w-full placeholder:text-[#949494]"
+            className="border !border-[#949494] ps-12 bg-white py-3 rounded-full w-full placeholder:text-[#949494]"
           />
+          <div className='absolute top-[10px] left-3'>
+            <img src={searchIcon} alt='icon' />
+          </div>
         </div>
 
-        {/* 👤 Desktop Right */}
         <div className="hidden md:flex items-center gap-6">
-          {/* Language Dropdown */}
-          <div className="relative min-w-[100px] border-r pr-" ref={dropdownRef}>
+
+          <div className="relative min-w-[100px]" ref={dropdownRef}>
             <button
               onClick={() => setIsOpen(prev => !prev)}
               className="flex items-center gap-2 text-sm text-gray-700"
             >
               <span>{selected ? selected.label : 'Language'}</span>
-              <svg
-                className={`w-4 h-4 transform ${isOpen ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+              <FiChevronDown className={`transform ${isOpen ? 'rotate-180' : ''}`} />
             </button>
             {isOpen && (
               <ul className="absolute mt-2 w-full bg-white border rounded shadow z-50">
@@ -86,13 +85,24 @@ function Header({ onChange, setShowSidebar }) {
             )}
           </div>
 
-          {/* Profile Info */}
           <div className="flex items-center gap-3">
             <img src={Profile_Avatar} alt="Profile" className="w-10 h-10 rounded-full object-cover" />
             <p className="text-sm font-semibold text-gray-800 whitespace-nowrap">
               {user?.email || 'Loading...'}
             </p>
           </div>
+        </div>
+
+        <div className="md:hidden relative" ref={dropdownRef}>
+          <button onClick={() => setProfileOpen(prev => !prev)} className="flex items-center gap-2">
+            <img src={Profile_Avatar} alt="Profile" className="w-10 h-10 rounded-full object-cover" />
+            <FiChevronDown className={`transform ${profileOpen ? 'rotate-180' : ''}`} />
+          </button>
+          {profileOpen && (
+            <div className="absolute right-0 mt-2 bg-white border rounded shadow z-50 w-48 p-3">
+              <p className="text-sm font-medium text-gray-800">{user?.email || 'Loading...'}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

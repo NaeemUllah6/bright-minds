@@ -77,7 +77,7 @@ export default function App() {
             ))}
           </div>
         </div>
-        <div className=' p-6 flex flex-col items-center rounded-[30px] max-w-[422px] bg-white'>
+        <div className=' p-6 flex flex-col items-center rounded-[30px] max-w-full md:max-w-[422px] bg-white'>
           <Heading
             text='Statics'
             className='!font-bold !text-4xl'
