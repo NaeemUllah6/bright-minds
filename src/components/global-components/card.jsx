@@ -11,7 +11,8 @@ function Card({ iconurl, cardicon, role, student_sattus }) {
             {role}
           </p>
           <Heading
-            className='text-[28px] font-semibold'
+            size='30'
+            className='font-semibold'
             text={student_sattus}
           />
         </div>

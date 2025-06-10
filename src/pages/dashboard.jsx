@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen font-sans text-gray-800">
-      <div className="flex flex-wrap xl:flex-nowrap gap-10">
+      <div className="flex flex-wrap xl:flex-nowrap gap-10 relative">
         <div className='w-full max-w-[975px]'>
           <div className='flex flex-wrap md:flex-nowrap gap-20 items-center gap rounded-[30px] px-6 py-9 bg-[#F47D43]'>
             <div className='flex flex-col'>
@@ -39,7 +39,7 @@ export default function App() {
               </p>
               <Heading
                 text='Sarpen your skills with our professional online souces'
-                size={48}
+                size={40}
                 className='font-semibold text-white'
 
               />
@@ -63,7 +63,8 @@ export default function App() {
           <div className='mt-10'>
             <Heading
               text='User Score'
-              className='!font-semibold text-[32px]'
+              size='30'
+              className='!font-semibold'
             />
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mt-[20px] gap-4'>
@@ -77,7 +78,7 @@ export default function App() {
             ))}
           </div>
         </div>
-        <div className=' p-6 flex flex-col items-center rounded-[30px] max-w-full md:max-w-[422px] bg-white'>
+        <div className=' p-6 flex flex-col items-center rounded-[30px] max-w-full md:max-w-[422px] bg-white top-20 sticky'>
           <Heading
             text='Statics'
             className='!font-bold !text-4xl'

@@ -9,6 +9,7 @@ import Login from "../components/login/login";
 import Courses from '../pages/courses'
 import CourseDetail from "../components/dashboard-components/course-details";
 import ExcerciseDetails from '../components/dashboard-components/excercise-detail'
+import UserProfile from "../pages/user-profile";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,8 @@ const AppRoutes = () => {
           <Route index element={<DashboardScreen />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/ai-screen" element={<AiScreen />} />
+          <Route path="/excercise-detail" element={<ExcerciseDetails />} />
+          <Route path="/user-profile" element={<UserProfile />} />
           <Route path="/excercise-detail" element={<ExcerciseDetails />} />
           <Route path="/course/:courseId/:subCourseId" element={<CourseDetail />} />
           <Route path="/courses/:courseId/:subCourseId/video/:videoId" element={<CourseDetail />} />

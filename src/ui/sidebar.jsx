@@ -30,7 +30,7 @@ function Sidebar({ showSidebar, setShowSidebar }) {
           key={index}
           to={item.path}
           onClick={() => setShowSidebar(false)}
-          className={`flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:scale-[1.02] ${location.pathname === item.path
+          className={`flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200  ${location.pathname === item.path
             ? 'bg-orange-100 text-orange-600'
             : 'text-gray-600 hover:bg-gray-100'
             }`}
@@ -45,10 +45,11 @@ function Sidebar({ showSidebar, setShowSidebar }) {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex flex-col fixed left-0 top-0 z-40 h-screen w-[250px] bg-white shadow-lg px-6 py-6">
+      <aside className="hidden md:flex flex-col fixed left-0 top-0 z-40 h-screen w-full max-w-[280px] bg-white shadow-lg px-[25px] py-[40px]">
         <img className='w-full object-contain' src={Black} alt='main logo' />
         {renderNavLinks()}
-        <div className='mt-auto pt-12'>
+        <div className='mt-auto pt-12 flex flex-col gap-6 items-center'>
+          <Link className='text-base font-medium'>About</Link>
           <button
             onClick={handleLogout}
             className="flex items-center gap-3 px-4 py-2 text-red-600 hover:text-red-800 transition-colors duration-200 hover:bg-red-50 rounded-lg w-full"
@@ -60,30 +61,28 @@ function Sidebar({ showSidebar, setShowSidebar }) {
       </aside>
 
       {/* Mobile Sidebar Overlay */}
-      <div 
-        className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ${
-          showSidebar 
-            ? 'opacity-100 pointer-events-auto' 
-            : 'opacity-0 pointer-events-none'
-        }`}
+      <div
+        className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ${showSidebar
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none'
+          }`}
       >
         {/* Backdrop with blur */}
-        <div 
-          className={`absolute inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 ${
-            showSidebar ? 'opacity-100' : 'opacity-0'
-          }`}
+        <div
+          className={`absolute inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 ${showSidebar ? 'opacity-100' : 'opacity-0'
+            }`}
           onClick={() => setShowSidebar(false)}
         />
 
         {/* Mobile Sidebar Content */}
-        <div 
+        <div
           className={`absolute left-0 top-0 h-full bg-white p-6 flex flex-col transition-transform duration-300 ease-in-out shadow-2xl
             w-[85%] xs:w-[70%] sm:w-[60%]
             ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}
         >
           <div className="flex justify-between items-center mb-4">
             <img className='w-[180px]' src={Black} alt='main logo' />
-            <button 
+            <button
               onClick={() => setShowSidebar(false)}
               className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
             >
@@ -94,6 +93,7 @@ function Sidebar({ showSidebar, setShowSidebar }) {
           {renderNavLinks()}
 
           <div className="mt-auto pt-10">
+
             <button
               onClick={handleLogout}
               className="flex items-center gap-3 px-4 py-2 text-red-600 hover:text-red-800 transition-colors duration-200 hover:bg-red-50 rounded-lg w-full"
