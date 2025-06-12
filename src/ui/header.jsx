@@ -156,31 +156,31 @@ function Header({ onChange, setShowSidebar }) {
             <FiChevronDown className={`transform transition-transform duration-300 ${mobileProfileOpen ? 'rotate-180' : ''}`} />
           </button>
           {mobileProfileOpen && (
-            <div className="absolute right-0 mt-2 bg-white border rounded shadow z-50 w-48 p-3">
-              <p className="text-sm font-medium text-gray-800 mb-2">{user?.email || 'Loading...'}</p>
-              <hr className="my-2" />
-              <ul className="space-y-2">
+            <div className="absolute right-0 mt-2 bg-white rounded-lg shadow-md z-50 w-48 p-3">
+
+              <ul className="space-y-4">
                 <li>
                   <button
                     onClick={() => {
                       navigate('/user-profile')
-                      setMobileProfileOpen(false)
+                      setProfileOpen(false)
                     }}
-                    className="w-full text-left text-sm text-gray-700 hover:text-indigo-600"
+                    className="w-full flex items-center gap-1 text-left text-base text-[#F47D43] hover:opacity-60"
                   >
-                    👤 User Profile
+                    <User className='text-[#F47D43]' /> User Profile
                   </button>
                 </li>
                 <li>
                   <button
                     onClick={() => {
                       logout()
-                      setMobileProfileOpen(false)
+                      setProfileOpen(false)
                       navigate('/login')
                     }}
-                    className="w-full text-left text-sm text-gray-700 hover:text-red-600"
+                    className="w-full flex items-center gap-1 text-left text-base text-[#F47D43] hover:opacity-60"
                   >
-                    🚪 Logout
+                    <LogOut className='text-[#F47D43]' />
+                    Logout
                   </button>
                 </li>
               </ul>
