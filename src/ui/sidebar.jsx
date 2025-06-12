@@ -5,6 +5,7 @@ import DashboardIcon from '../assets/images/dashboard-icon.svg'
 import Black from '../assets/images/blacklogo.svg'
 import { HiOutlineMenu } from 'react-icons/hi'
 import { IoClose } from 'react-icons/io5'
+import { FaExclamation, FaExclamationCircle } from 'react-icons/fa'
 
 function Sidebar({ showSidebar, setShowSidebar }) {
   const { logout } = useAuth()
@@ -48,8 +49,10 @@ function Sidebar({ showSidebar, setShowSidebar }) {
       <aside className="hidden md:flex flex-col fixed left-0 top-0 z-40 h-screen w-full max-w-[280px] bg-white shadow-lg px-[25px] py-[40px]">
         <img className='w-full object-contain' src={Black} alt='main logo' />
         {renderNavLinks()}
-        <div className='mt-auto pt-12 flex flex-col gap-6 items-center'>
-          <Link className='text-base font-medium'>About</Link>
+        <div className='mt-auto pt-12 flex flex-col gap-6 items-star px-6'>
+          {/* <button className='text-base font-medium flex text-[#1E1E1E] gap-2'>
+            <FaExclamation className='bg-transparent border text-2xl p-[2px] text-[#949494] rounded-full' />
+            About</button> */}
           <button
             onClick={handleLogout}
             className="flex items-center gap-3 px-4 py-2 text-red-600 hover:text-red-800 transition-colors duration-200 hover:bg-red-50 rounded-lg w-full"

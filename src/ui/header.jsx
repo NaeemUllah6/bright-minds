@@ -6,6 +6,7 @@ import { HiOutlineMenu } from 'react-icons/hi'
 import { FiChevronDown } from 'react-icons/fi'
 import searchIcon from '../assets/images/searcicon.svg'
 import { useNavigate } from 'react-router-dom'
+import { LogOut, User } from 'lucide-react'
 
 function Header({ onChange, setShowSidebar }) {
   const navigate = useNavigate()
@@ -113,17 +114,17 @@ function Header({ onChange, setShowSidebar }) {
               <p className="text-sm font-medium text-gray-800 mb-2">{user?.email || 'Loading...'}</p>
             </div>
             {profileOpen && (
-              <div className="absolute right-0 mt-2 bg-white border rounded shadow z-50 w-48 p-3">
-                <ul className="space-y-2">
+              <div className="absolute right-0 mt-2 bg-white shadow-md rounded z-50 w-48 p-3">
+                <ul className="space-y-4">
                   <li>
                     <button
                       onClick={() => {
                         navigate('/user-profile')
                         setProfileOpen(false)
                       }}
-                      className="w-full text-left text-sm text-gray-700 hover:text-indigo-600"
+                      className="w-full flex items-center gap-1 text-left text-base text-[#F47D43] hover:opacity-60"
                     >
-                      👤 User Profile
+                      <User className='text-[#F47D43]' /> User Profile
                     </button>
                   </li>
                   <li>
@@ -133,9 +134,10 @@ function Header({ onChange, setShowSidebar }) {
                         setProfileOpen(false)
                         navigate('/login')
                       }}
-                      className="w-full text-left text-sm text-gray-700 hover:text-red-600"
+                      className="w-full flex items-center gap-1 text-left text-base text-[#F47D43] hover:opacity-60"
                     >
-                      🚪 Logout
+                      <LogOut className='text-[#F47D43]' />
+                      Logout
                     </button>
                   </li>
                 </ul>
