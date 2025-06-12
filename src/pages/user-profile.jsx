@@ -145,27 +145,29 @@ const UserProfile = () => {
                     <p className="text-gray-600 text-sm">Change profile pic</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {Inputs.map((item, index) => (
-                        <div key={index} className="relative">
-                            <Input
-                                label={item.label}
-                                name={item.name}
-                                placeholder={item.placeholder}
-                                type={item.type}
-                                value={formData[item.name]}
-                                onChange={handleChange}
-                                required
-                                error={errors[item.name]}
-                            />
-                            <div className="absolute right-1 bottom-1">
-                                <img src={editIcon} alt="icon" />
+                <form onSubmit={handleSubmit} className="">
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+                        {Inputs.map((item, index) => (
+                            <div key={index} className="relative w-full">
+                                <Input
+                                    label={item.label}
+                                    name={item.name}
+                                    placeholder={item.placeholder}
+                                    type={item.type}
+                                    value={formData[item.name]}
+                                    onChange={handleChange}
+                                    required
+                                    error={errors[item.name]}
+                                />
+                                <div className="absolute right-1 bottom-1">
+                                    <img src={editIcon} alt="icon" />
+                                </div>
+                                {errors[item.name] && (
+                                    <p className="text-red-500 text-sm mt-1">{errors[item.name]}</p>
+                                )}
                             </div>
-                            {errors[item.name] && (
-                                <p className="text-red-500 text-sm mt-1">{errors[item.name]}</p>
-                            )}
-                        </div>
-                    ))}
+                        ))}
+                    </div>
 
                     {/* Buttons */}
                     <div className="col-span-2 flex justify-center gap-4 mt-4">
