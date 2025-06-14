@@ -13,7 +13,7 @@ function Card({ iconurl, cardicon, role, student_sattus, cardNumber, Button }) {
             {cardNumber}
           </p>}
           <div className='flex-col'>
-            <p className='text-xl'>
+            <p className='text-xl text-nowrap'>
               {role}
             </p>
             <Heading

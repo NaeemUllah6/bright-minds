@@ -61,14 +61,18 @@ export default function App() {
               </div>
               <img className='hidden md:block' src={dashboardstars} alt="icon" />
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mt-[20px] gap-4'>
+            <div className='flex flex-wrap mt-[20px] gap-4'>
               {cards_data.map((item, index) => (
-                <Card id={index}
-                  cardicon={true}
-                  role={item.role}
-                  student_sattus={item.Status}
-                  iconurl={item.icon}
-                />
+                <div id={index}
+                  className=' w-full md:max-w-[250px]'
+                >
+                  <Card
+                    cardicon={true}
+                    role={item.role}
+                    student_sattus={item.Status}
+                    iconurl={item.icon}
+                  />
+                </div>
               ))}
             </div>
             <div className='mt-10'>
@@ -133,7 +137,7 @@ export default function App() {
                 text='Continue your learning, you have almost achieved your target'
                 className='text-center mt-2'
               />
-              <div className='mt-10 mb-8'>
+              <div className='mt-10 mb-8 hidden md:block'>
                 <BarGraph />
               </div>
             </div>
