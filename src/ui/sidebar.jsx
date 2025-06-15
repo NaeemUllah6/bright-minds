@@ -49,13 +49,20 @@ function Sidebar({ showSidebar, setShowSidebar }) {
       <aside className="hidden md:flex flex-col fixed left-0 top-0 z-40 h-screen w-full max-w-[280px] bg-white shadow-lg px-[25px] py-[40px]">
         <img className='w-full object-contain' src={Black} alt='main logo' />
         {renderNavLinks()}
-        <div className='mt-auto pt-12 flex flex-col gap-6 items-star px-6'>
+        <div className='mt-auto pt-12 flex flex-col gap-6 items-star px-2'>
           {/* <button className='text-base font-medium flex text-[#1E1E1E] gap-2'>
             <FaExclamation className='bg-transparent border text-2xl p-[2px] text-[#949494] rounded-full' />
             About</button> */}
+          <Link
+            to='about-us'
+            className="flex items-center gap-3 px-4 py-2 text-[#1E1E1E] hover:text-red-800 transition-colors duration-200 hover:bg-red-50 rounded-lg w-full"
+          >
+            <img className='h-6 w-6' src={DashboardIcon} alt='logout icon' />
+            <span className='text-base font-medium md:text-lg'>About</span>
+          </Link>
           <button
             onClick={handleLogout}
-            className="flex items-center gap-3 px-4 py-2 text-red-600 hover:text-red-800 transition-colors duration-200 hover:bg-red-50 rounded-lg w-full"
+            className="flex items-center gap-3 px-4 py-2 text-[#1E1E1E] hover:text-red-800 transition-colors duration-200 hover:bg-red-50 rounded-lg w-full"
           >
             <img className='h-6 w-6' src={DashboardIcon} alt='logout icon' />
             <span className='text-base font-medium md:text-lg'>Logout</span>
@@ -96,10 +103,16 @@ function Sidebar({ showSidebar, setShowSidebar }) {
           {renderNavLinks()}
 
           <div className="mt-auto pt-10">
-
+            <Link
+              to='about-us'
+              className="flex items-center gap-3 px-4 py-2 text-[#1E1E1E] hover:text-red-800 transition-colors duration-200 hover:bg-red-50 rounded-lg w-full"
+            >
+              <img className='h-6 w-6' src={DashboardIcon} alt='logout icon' />
+              <span className='text-base font-medium md:text-lg'>About</span>
+            </Link>
             <button
               onClick={handleLogout}
-              className="flex items-center gap-3 px-4 py-2 text-red-600 hover:text-red-800 transition-colors duration-200 hover:bg-red-50 rounded-lg w-full"
+              className="flex items-center gap-3 px-4 py-2 text-[#1E1E1E] hover:text-red-800 transition-colors duration-200 hover:bg-red-50 rounded-lg w-full"
             >
               <img className='h-6 w-6' src={DashboardIcon} alt='logout icon' />
               <span className='text-base font-medium'>Logout</span>
