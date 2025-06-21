@@ -46,7 +46,7 @@ function Sidebar({ showSidebar, setShowSidebar }) {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex flex-col fixed left-0 top-0 z-40 h-screen w-full max-w-[280px] bg-white shadow-lg px-[25px] py-[40px]">
+      <aside className="hidden lg:flex flex-col fixed left-0 top-0 z-40 h-screen w-full max-w-[280px] bg-white shadow-lg px-[25px] py-[40px]">
         <img className='w-full object-contain' src={Black} alt='main logo' />
         {renderNavLinks()}
         <div className='mt-auto pt-12 flex flex-col gap-6 items-star px-2'>
@@ -72,7 +72,7 @@ function Sidebar({ showSidebar, setShowSidebar }) {
 
       {/* Mobile Sidebar Overlay */}
       <div
-        className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ${showSidebar
+        className={`fixed inset-0 z-50 lg:hidden transition-all duration-300 ${showSidebar
           ? 'opacity-100 pointer-events-auto'
           : 'opacity-0 pointer-events-none'
           }`}

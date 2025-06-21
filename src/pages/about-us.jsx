@@ -35,9 +35,9 @@ function About() {
                     />
                 </div>
                 <div className='grid items-end grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-center mt-[33px] gap-[34px]'>
-                    <img src={Img1} alt="image1" />
-                    <img src={Img2} alt="image2" />
-                    <img src={Img3} alt="image3" />
+                    <img className='w-full' src={Img1} alt="image1" />
+                    <img className='w-full' src={Img2} alt="image2" />
+                    <img className='w-full' src={Img3} alt="image3" />
                 </div>
             </div>
             <div className='py-10 md:py-[100px]'>
@@ -61,9 +61,9 @@ function About() {
                 </div>
             </div>
             <div className=''>
-                <div className="flex flex-wrap md:flex-nowrap items-center gap-10">
-                    <div className='max-w-[619px]'>
-                        <img src={WomenPic} alt="" />
+                <div className="flex flex-wrap lg:flex-nowrap items-center gap-10">
+                    <div className='w-full lg:max-w-[619px]'>
+                        <img className='w-full' src={WomenPic} alt="" />
                     </div>
                     <div className='max-w-[773px]'>
                         <Heading

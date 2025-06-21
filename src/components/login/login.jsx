@@ -17,7 +17,6 @@ const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  // Redirect if already authenticated
   useEffect(() => {
     if (isAuthenticated) {
       navigate('/')
@@ -29,13 +28,11 @@ const Login = () => {
     setError('')
 
     try {
-      // Replace this with your actual login API call
       const response = await loginUser(credentials)
       const { token, user } = response
 
       login(token, user)
 
-      // Get the redirect path from location state or default to home
       const from = location.state?.from || "/"
       navigate(from, { replace: true })
     } catch (err) {
@@ -56,9 +53,9 @@ const Login = () => {
       }}
       className='px-6 md:px-20 pb-6 pt-6 md:pt-[70px]'
     >
-      <div className="grid justify-center grid-cols-1 md:grid-cols-2 gap-6 items-start max-w-[1440px] mx-auto">
+      <div className="grid justify-center grid-cols-1 lg:grid-cols-2 gap-6 items-start max-w-[1440px] mx-auto">
 
-        <div className='hidden md:block space-y-6'>
+        <div className='hidden lg:block space-y-6'>
           <div>
             <Heading
               className='italic text-white leading-tight'
@@ -187,11 +184,8 @@ const Login = () => {
 
 export default Login
 
-// This is a mock function - replace with your actual API call
 const loginUser = async (credentials) => {
-  // Simulate API call
   return new Promise((resolve, reject) => {
-    // This is just for demonstration - replace with real API call
     if (credentials.email && credentials.password) {
       resolve({
         token: 'dummy-token',

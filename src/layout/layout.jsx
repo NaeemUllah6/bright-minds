@@ -22,7 +22,7 @@ const Layout = () => {
             <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
 
             {/* Main Content */}
-            <main className="ml-0 md:ml-[280px] min-h-screen">
+            <main className="ml-0 lg:ml-[280px] min-h-screen">
                 {/* Header */}
                 <Header setShowSidebar={setShowSidebar} />
 

@@ -11,10 +11,10 @@ import Modal from '../global-components/modal';
 import axios from 'axios';
 
 function Signup() {
- const [modalOpen, setModalOpen] = useState(false)
- const handleSubmit = ()=>{
-  setModalOpen(true)
- }
+  const [modalOpen, setModalOpen] = useState(false)
+  const handleSubmit = () => {
+    setModalOpen(true)
+  }
   return (
     <div
       style={{
@@ -25,8 +25,8 @@ function Signup() {
       }}
       className='px-6 md:px-20 pb-6 pt-6 md:pt-[70px]'
     >
-      <div className="grid justify-center grid-cols-1 md:grid-cols-2 gap-6 items-end">
-        <div className='hidden md:flex flex-col justify-between h-full'>
+      <div className="grid justify-center grid-cols-1 lg:grid-cols-2 gap-6 items-end">
+        <div className='hidden lg:flex flex-col justify-between h-full'>
           <img className='max-w-[465px] h-[72px] w-full' src={mainlogowhite} alt='icon' />
           <img src={Heroicon} alt='icon' />
         </div>
@@ -46,9 +46,9 @@ function Signup() {
                 type='text'
                 placeholder='John Doe'
                 label='First Name'
-               
+
               />
-             
+
             </div>
 
             <div className='w-full relative'>
@@ -57,9 +57,9 @@ function Signup() {
                 type='text'
                 placeholder='Doe Smith'
                 label='Last Name'
-              
+
               />
-             
+
             </div>
 
             <div className='w-full relative'>
@@ -68,9 +68,9 @@ function Signup() {
                 type='email'
                 placeholder='developerzone360@gmail.com'
                 label='Email Address'
-              
+
               />
-             
+
             </div>
 
             <div className='w-full relative'>
@@ -80,9 +80,9 @@ function Signup() {
                 placeholder='**********'
                 label='Password'
                 icon='icon'
-              
+
               />
-             
+
             </div>
 
             <div className='relative w-full'>
@@ -92,7 +92,7 @@ function Signup() {
                   Please accept our Terms and Conditions
                 </label>
               </div>
-             
+
             </div>
 
             <Button

@@ -103,7 +103,7 @@ function Courses() {
     <div className="">
       <Breadcrumb items={breadcrumbItems} onNavigate={handleBreadcrumbNavigate} />
       <Heading text="Courses" className="font-semibold text-[32px]" />
-      <div className="flex flex-wrap md:flex-nowrap gap-6 mt-4">
+      <div className="flex flex-wrap lg:flex-nowrap gap-6 mt-4">
         {currentData.map((course, index) => (
           <div
             key={index}

@@ -55,7 +55,7 @@ function Header({ onChange, setShowSidebar }) {
     <div className="bg-[#E5F4F8] px-4 py-3 md:px-[54px] md:py-4 sticky top-0 z-[99999]">
       <div className="flex justify-between items-center gap-4">
         {/* 📱 Burger Menu */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={() => setShowSidebar(true)}>
             <HiOutlineMenu className="text-3xl text-gray-700" />
           </button>
